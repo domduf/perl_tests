@@ -13,17 +13,24 @@ my $resultat;
 my $boucle = "";
 my $bascule = -1;
 
+# fonctions utiles
+sub affiche_mode {
+	my ($x) = @_ ;
+	(print "-MODE REGEX (on change la chaine)\n"."/".$reg."/\n")if ($x ==1);
+	(print "-MODE CHAINE (on change la regex)\n".$chaine."\n" )if ($bascule == 0);		
+
+}
+
 
 
 
 while ( $boucle eq "" ){
 
 
+	affiche_mode($bascule);
 
 	if ($bascule < 0 or $bascule == 1) {
-
 		#------CHAINE à TESTER -----
-		(print "-MODE REGEX (on change la chaine)\n"."/".$reg."/\n")if ($bascule ==1);
 		print "entrez une chaine\n";
 		$chaine = <>;
 		chomp $chaine;
@@ -31,7 +38,6 @@ while ( $boucle eq "" ){
 
 	if ($bascule < 0 or $bascule == 0) {
 		#---------- REGEX ----------
-		(print "-MODE CHAINE (on change la regex)\n".$chaine."\n" )if ($bascule == 0);		
 		print "entrez la regex : \n";
 		$reg = <>;
 		chomp $reg;
@@ -56,9 +62,8 @@ while ( $boucle eq "" ){
 	#----- MENU ----------------
 
 	print "------------------------------------------\n";
-	print "-MODE CHAINE " if ($bascule == 0);
-	print "-MODE REGEX " if ($bascule ==1);
-	print "\n- a pour changer le mode de saisie.\n";
+	affiche_mode($bascule);
+	print "- a pour changer le mode de saisie.\n";
 	print "- autre touche pour sortir.\n";
 	print "Appuyez sur ENTREE\n";
 
