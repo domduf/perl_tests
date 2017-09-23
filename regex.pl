@@ -16,7 +16,7 @@ my $bascule = -1;
 # fonctions utiles
 sub affiche_mode {
 	my ($x) = @_ ;
-	(print "-MODE REGEX (on change la chaine)\n"."/".$reg."/\n")if ($x ==1);
+	(print "-MODE REGEXP (on change la chaine)\n"."/".$reg."/\n")if ($x ==1);
 	(print "-MODE CHAINE (on change la regex)\n".$chaine."\n" )if ($bascule == 0);		
 
 }
@@ -50,11 +50,23 @@ while ( $boucle eq "" ){
 
 
 	#---- AFFICHAGE ------------
+	print "----------------------------------------------------\n";
 	print "chaine: ".$chaine."\n".
 	"regex: /".$reg."/\n";
-	
+			
 	# affichage du resultat
-	(print "resultat: ".$resultat."\n") if ( $resultat ne "" );
+	if ($resultat ne "") {
+		print "resultat: \n";
+		print "$&\n";
+		print "-> $1\n" if (defined($1));
+		print "-> $2\n" if (defined($2));
+		print "-> $3\n" if (defined($3));
+
+
+
+	}
+	print "- - - - - - - - RIEN - - - - - - - - - - - - - - - -\n" if ( $resultat eq "" );
+
 
 	$bascule= abs($bascule);
 
@@ -76,6 +88,16 @@ while ( $boucle eq "" ){
 		$boucle = "";
 		$bascule = abs($bascule-1);
 	}
+
+	else 
+		{if ($boucle ne "") {
+			print "Voulez vous vraiement sortir ?\n";
+			print " ENTREE pour ANNULER\n";
+			$boucle = <>;
+			chomp $boucle;
+		}
+	}
+
 	
 	 
 }
