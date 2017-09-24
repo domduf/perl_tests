@@ -4,6 +4,32 @@ use strict;
 
 use warnings;
 
+=head1
+Ce script permet de tester facilement la validité
+de vos regexp avant de le inclure dans vos programmes.
+
+Vous avez le choix entre deux modes:
+
+-le "REGEXP_mode" (mode par defaut) 
+	on entre une regexp et cette dernière est mémorisée.
+	chaque nouvelle entrée est une chaine de caractères 
+	à tester
+
+-le "CHAINE_mode" 
+	permet d'entrer une chaine de caractères, les nouvelles
+	entrées seront des regexp qui testeront cette chaine.
+
+On bascule entre les modes après l'affichage du résultat 
+du test en entrant la lettre "a"
+
+Pour lancer un nouveau test, il suffit d'appuyer sur ENTREE
+
+Bon test.
+
+minique.duf@gmail.com
+
+=cut
+
 
 
 # declaration des variables
