@@ -1,8 +1,8 @@
-#!/usr/bin/env perl
+#!/usr/bin/perl
 
 use strict;
 
-use warnings;
+use warnings; 
 
 =head1
 Ce script permet de tester facilement la validité
@@ -49,7 +49,7 @@ sub affiche_mode {
 
 
 
-
+# boucle principale
 while ( $boucle eq "" ){
 
 
@@ -96,9 +96,6 @@ while ( $boucle eq "" ){
 	print "- - - - - - - - RIEN - - - - - - - - - - - - - - - -\n" if ( $resultat eq "" );
 
 
-	$bascule= abs($bascule);
-
-
 	#----- MENU ----------------
 
 	print "------------------------------------------\n";
@@ -112,21 +109,22 @@ while ( $boucle eq "" ){
 	$boucle = <>;
 	chomp $boucle;
 
+	# on passe au mode 1 si $bascule==-1
+	$bascule= abs($bascule);
+
+	# changement de mode demandé par l'utilisateur
 	if ($boucle eq "a") {
 		$boucle = "";
 		$bascule = abs($bascule-1);
 	}
 
-	else 
-		{if ($boucle ne "") {
+	# confirmation de desir de sortir du script
+	elsif ($boucle ne "") {
 			print "Voulez vous vraiement sortir ?\n";
 			print " ENTREE pour ANNULER\n";
 			$boucle = <>;
 			chomp $boucle;
 		}
-	}
-
 	
 	 
 }
-
