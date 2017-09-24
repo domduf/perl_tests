@@ -58,8 +58,8 @@ while ( $boucle eq "" ){
 			
 	# affichage du resultat
 	if ($resultat ne "") {
-		print "resultat: ";
-		print "$&\n";
+		print "resultat: -->";
+		print "$&<--\n";
 		print "-> $1\n" if (defined($1));
 		print "-> $2\n" if (defined($2));
 		print "-> $3\n" if (defined($3));
