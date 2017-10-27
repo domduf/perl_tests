@@ -86,12 +86,17 @@ while ( $boucle eq "" ){
 	if ($resultat ne "") {
 		print "resultat: -->";
 		print "$&<--\n";
-		print "-> $1\n" if (defined($1));
-		print "-> $2\n" if (defined($2));
-		print "-> $3\n" if (defined($3));
 
 
-
+		print "\$1 -> $1\n" if (defined($1));
+		print "\$2 -> $2\n" if (defined($2));
+		print "\$3-> $3\n" if (defined($3));
+		print "\$4-> $4\n" if (defined($4));
+		print "\$5-> $5\n" if (defined($5));
+		print "\$6-> $6\n" if (defined($6));		
+		print "\$7-> $7\n" if (defined($7));
+		print "\$8-> $8\n" if (defined($8));
+		print "\$9-> $9\n" if (defined($9));		
 	}
 	print "- - - - - - - - RIEN - - - - - - - - - - - - - - - -\n" if ( $resultat eq "" );
 
